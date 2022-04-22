@@ -1,5 +1,5 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { IUser, ISocialLink } from "../types/User";
+import { IUser, ISocialLink, IMusic } from "../types/User";
 import Head from "next/head";
 import Image from "next/image";
 import Container from "@components/Container";
@@ -9,6 +9,8 @@ import Button from "@components/Button";
 import SvgIcon from "@components/SvgIcon";
 import NextLink from "@components/NextLink";
 import BackgroundImage from "@components/BackgroundImage";
+import SocialLink from "@components/ExternalLink";
+import MusicLink from "@components/MusicLink";
 
 interface Props {
   user: IUser;
@@ -34,7 +36,7 @@ const UserLinks: NextPage<Props> = ({ user }) => {
         {/* <BackgroundImage backgroundImageUrl={backgroundImageUrl} /> */}
         <Avatar>
           <Image
-            className="rounded-full shadow-sm"
+            className="rounded-full"
             src={user.avatar}
             alt="Picture of the author"
             width={64}
@@ -44,16 +46,15 @@ const UserLinks: NextPage<Props> = ({ user }) => {
         </Avatar>
         <ul className="flex flex-col gap-4">
           {user.links.socials.map((e: ISocialLink) => (
-            <li key={e.socialsName}>
-              <NextLink href={e.url} target="_blank">
-                <Button>
-                  <SvgIcon name={e.socialsName.toLocaleLowerCase()}>
-                    {e.socialsName}
-                  </SvgIcon>
-                </Button>
-              </NextLink>
+            <li key={e.name}>
+              <SocialLink linkDetails={e} />
             </li>
           ))}
+          {user.links.music.songName && (
+            <li>
+              <MusicLink musicDetails={user.links.music}>Music</MusicLink>
+            </li>
+          )}
         </ul>
         <div className="absolute inset-x-0 bottom-0 flex justify-center items-center">
           <Image
@@ -87,24 +88,46 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         links: {
           socials: [
             {
-              socialsName: "Facebook",
+              name: "Facebook",
               url: "https://www.facebook.com/adrian.mroczek.14/",
             },
             {
-              socialsName: "Instagram",
+              name: "Instagram",
               url: "https://www.instagram.com/adr.mroczek/",
             },
             {
-              socialsName: "Personal Website",
+              name: "Personal Website",
               url: "https://amroczek.dev/",
             },
           ],
           music: {
-            songName: "",
+            songName: "Sunset Lover",
+            artistName: "Petit Biscuit",
+            thumbnail: "/assets/music/sunset-lover-thumbnail.jpg",
             platforms: [
               {
-                platformName: "",
-                url: "",
+                name: "Spotify",
+                url: "https://open.spotify.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+              },
+              {
+                name: "Apple Music",
+                url: "https://apple.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+              },
+              {
+                name: "Youtube Music",
+                url: "https://youtube.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+              },
+              {
+                name: "Deezer",
+                url: "https://deezer.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+              },
+              {
+                name: "Tidal",
+                url: "https:/tidal.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+              },
+              {
+                name: "Bandcamp",
+                url: "https:/bandcamp.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
               },
             ],
           },
@@ -135,30 +158,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     users: [
       {
         id: "adrianm",
-        designPreferences: {
-          backgroundColor: "",
-          primaryColor: "",
-          secondaryColor: "",
-        },
-        links: {
-          socials: [
-            {
-              socialsName: "",
-              url: "",
-            },
-          ],
-          music: {
-            songName: "",
-            platforms: [
-              {
-                platformName: "",
-                url: "",
-              },
-            ],
-          },
-
-          shows: [{ date: "", location: "", ticketsAvailable: true }],
-        },
       },
     ],
   };
