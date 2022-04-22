@@ -43,7 +43,7 @@ export interface IDesignPreferences {
     secondaryColor: string;
 }
 
-export interface User {
+export interface IUser {
   id: string;
   designPreferences: IDesignPreferences;
   links: ILinks;
