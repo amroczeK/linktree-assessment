@@ -1,9 +1,10 @@
-import React, { FC, useState } from "react";
+import React, { FC, useRef, useState } from "react";
 import Image from "next/image";
 import Button from "@components/Button";
 import { IMusic, IPlatformDetails } from "../types/User";
 import PlatformLink from "@components/ExternalLink";
 import SvgIcon from "./SvgIcon";
+import { useClickOutsideComponent } from "@hooks/ClickOutsideComponent";
 
 interface Props {
   musicDetails: IMusic;
@@ -11,6 +12,8 @@ interface Props {
 }
 
 const MusicLink: FC<Props> = ({ musicDetails, children }) => {
+  const wrapperRef = useRef(null);
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   let { songName, artistName, thumbnail, platforms } = musicDetails;
@@ -20,11 +23,13 @@ const MusicLink: FC<Props> = ({ musicDetails, children }) => {
   };
 
   const onClickPlay = () => {
-      console.log("playing music");
-  }
+    console.log("playing music");
+  };
+
+  useClickOutsideComponent(wrapperRef, "music-link", isOpen, onClickHandler);
 
   return (
-    <div className="flex flex-col">
+    <div ref={wrapperRef} id="music-link" className="flex flex-col">
       <Button onClick={onClickHandler}>{children}</Button>
       <div
         className={`mt-2 w-full ${
@@ -43,7 +48,11 @@ const MusicLink: FC<Props> = ({ musicDetails, children }) => {
               alt={songName}
             />
             <div className="flex justify-center items-center gap-2.5">
-              <SvgIcon styles="cursor-pointer" name={"play"} onClick={onClickPlay}/>
+              <SvgIcon
+                styles="cursor-pointer"
+                name={"play"}
+                onClick={onClickPlay}
+              />
               <div>
                 <h2>{songName}</h2>
                 <span className="text-gray-500">by {artistName}</span>
