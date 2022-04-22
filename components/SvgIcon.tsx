@@ -37,7 +37,7 @@ const iconTypes = {
   ticketmaster: Ticketmaster,
   tidal: Tidal,
   twitter: Twitter,
-  youtube: Youtube,
+  youtubemusic: Youtube,
   linkedin: LinkedIn,
   github: GitHub
 };
@@ -45,14 +45,16 @@ const iconTypes = {
 interface Props {
   children?: React.ReactNode;
   name: string;
+  styles?: string;
+  onClick?: () => void;
 }
 
-const SvgIcon: FC<Props> = ({ children, name, ...props }) => {
-  let Icon = iconTypes.hasOwnProperty(name) ? iconTypes[name] : null;
+const SvgIcon: FC<Props> = ({ children, name, styles, onClick }) => {
+  let Icon: any = iconTypes.hasOwnProperty(name) ? iconTypes[name] : null;
 
   return (
-    <div className="flex gap-2">
-      {Icon && <Icon/>}
+    <div className="flex gap-2.5">
+      {Icon && <Icon className={styles} onClick={onClick}/>}
       {children}
     </div>
   );

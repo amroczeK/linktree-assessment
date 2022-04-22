@@ -1,5 +1,5 @@
 export interface ISocialLink {
-    socialsName: string;
+    name: string;
     url: string;
 }
 
@@ -8,7 +8,7 @@ export interface ISocials extends Array<ISocialLink>{
 }
 
 export interface IPlatformDetails {
-    platformName: string;
+    name: string;
     url: string;
 }
 
@@ -18,6 +18,8 @@ export interface IPlatforms extends Array<IPlatformDetails>{
 
 export interface IMusic {
   songName: string;
+  artistName: string;
+  thumbnail: string;
   platforms: IPlatforms;
 }
 

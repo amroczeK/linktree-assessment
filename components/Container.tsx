@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Container: FC<Props> = ({ children, backgroundColor, backgroundImageUrl, primaryColor, secondaryColor }) => {
-  return <div className="relative container p-6 max-w-md w-full h-full sm:max-h-[600px]">
+  return <div className="relative container p-6 max-w-md w-full h-full bg-gray-50">
     {children}
   </div>;
 };
