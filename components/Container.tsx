@@ -2,10 +2,16 @@ import { FC } from "react";
 
 interface Props {
   children?: React.ReactNode;
+  backgroundColor?: string;
+  backgroundImageUrl?: string;
+  primaryColor?: string;
+  secondaryColor?: string;
 }
 
-const Container: FC<Props> = ({ children }) => {
-  return <div className="w-32 h-32 bg-fuchsia-50"></div>;
+const Container: FC<Props> = ({ children, backgroundColor, backgroundImageUrl, primaryColor, secondaryColor }) => {
+  return <div className="relative container p-6 max-w-md w-full h-full sm:max-h-[600px]">
+    {children}
+  </div>;
 };
 
 export default Container;

@@ -9,7 +9,8 @@
       "@models/*": ["models/*"],
       "@middlewares/*": ["middlewares/*"],
       "@styles/*": ["styles/*"],
-      "@types/*": ["types/*"]
+      "@types/*": ["types/*"],
+      "@public/*": ["public/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
@@ -24,6 +25,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types/Icons.js"],
   "exclude": ["node_modules"]
 }

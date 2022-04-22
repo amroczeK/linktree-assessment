@@ -39,12 +39,14 @@ export interface ILinks {
 
 export interface IDesignPreferences {
     backgroundColor: string;
+    backgroundImageUrl: string;
     primaryColor: string;
     secondaryColor: string;
 }
 
 export interface IUser {
   id: string;
+  avatar: string
   designPreferences: IDesignPreferences;
   links: ILinks;
 }
