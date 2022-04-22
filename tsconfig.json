@@ -8,7 +8,8 @@
       "@libs/*": ["libs/*"],
       "@models/*": ["models/*"],
       "@middlewares/*": ["middlewares/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@types/*": ["types/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
