@@ -20,7 +20,7 @@ import Youtube from "@public/assets/icons/youtube.svg";
 import LinkedIn from "@public/assets/icons/linkedin.svg";
 import GitHub from "@public/assets/icons/github.svg";
 
-const iconTypes = {
+const iconTypes: any = {
   applemusic: AppleMusic,
   arrow: Arrow,
   bandcamp: BandCamp,
