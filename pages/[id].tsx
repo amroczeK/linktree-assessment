@@ -5,10 +5,6 @@ import Image from "next/image";
 import Container from "@components/Container";
 import React from "react";
 import Avatar from "@components/Avatar";
-import Button from "@components/Button";
-import SvgIcon from "@components/SvgIcon";
-import NextLink from "@components/NextLink";
-import BackgroundImage from "@components/BackgroundImage";
 import SocialLink from "@components/ExternalLink";
 import MusicLink from "@components/MusicLink";
 
@@ -29,11 +25,7 @@ const UserLinks: NextPage<Props> = ({ user }) => {
       </Head>
       <Container
         backgroundColor={backgroundColor}
-        backgroundImageUrl={backgroundImageUrl}
-        primaryColor={primaryColor}
-        secondaryColor={secondaryColor}
       >
-        {/* <BackgroundImage backgroundImageUrl={backgroundImageUrl} /> */}
         <Avatar>
           <Image
             className="rounded-full"
@@ -80,10 +72,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         id: "adrianm",
         avatar: "/assets/adrian-profile-picture.png",
         designPreferences: {
-          backgroundColor: "slate-50",
+          backgroundColor: "gray-50",
           backgroundImageUrl: "/assets/backgrounds/background1.jpg",
-          primaryColor: "gray-50",
-          secondaryColor: "gray-900",
+          primaryColor: "green-500",
+          secondaryColor: "gray-500",
         },
         links: {
           socials: [
