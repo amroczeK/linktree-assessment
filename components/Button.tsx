@@ -9,21 +9,21 @@ interface Props {
 const Button: FC<Props> = ({ children, onClick }) => {
   const { designPreferences } = useUserPerferences();
 
-  const { primaryColor } = designPreferences;
+  const { primaryColor, hoverColor, ringColor } =
+    designPreferences;
 
-  const styles = `flex flex-col items-center justify-center w-full py-2.5 ${
-    primaryColor !== "" ? `bg-${primaryColor}` : "bg-pink-500"
-  } rounded-xl ${
-    primaryColor !== "" ? `hover:bg-${primaryColor}/75` : "hover:bg-pink-500/75"
-  } focus:ring-2 focus:ring-offset-2 ${
-    primaryColor !== "" ? `ring-${primaryColor}` : `ping-pink-500`
-  } shadow-md`;
-
-  console.log(primaryColor);
-  console.log(styles);
+  let styles = {
+    backgroundColor:
+      primaryColor === "" ? "bg-green-500" : `bg-${primaryColor}`,
+    ringColor: ringColor === "" ? "ring-green-500" : ringColor,
+    hoverColor: hoverColor === "" ? "hover:bg-green-300" : hoverColor,
+  };
 
   return (
-    <button onClick={onClick} className={styles}>
+    <button
+      onClick={onClick}
+      className={`flex flex-col items-center justify-center w-full py-2.5 rounded-xl shadow-md focus:ring-2 ho focus:ring-offset-2 ${styles.ringColor} ${styles.backgroundColor} ${styles.hoverColor}`}
+    >
       {children}
     </button>
   );

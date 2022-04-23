@@ -21,7 +21,6 @@ const UserLinks: NextPage<Props> = ({ user }: Props) => {
   const { setUserPreferences } = useUserPerferences();
 
   useEffect(() => {
-    console.log("calling user preferences")
     setUserPreferences(user.designPreferences);
   }, [user, setUserPreferences]);
 
@@ -72,10 +71,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         id: "adrianm",
         avatar: "/assets/adrian-profile-picture.png",
         designPreferences: {
-          backgroundColor: "gray-50",
+          backgroundColor: "bg-gray-50",
           backgroundImageUrl: "/assets/backgrounds/background1.jpg",
           primaryColor: "green-500",
-          secondaryColor: "gray-500",
+          secondaryColor: "gray-300",
+          hoverColor: "hover:bg-green-300",
+          ringColor: "ring-green-500",
         },
         links: {
           socials: [

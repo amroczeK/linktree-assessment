@@ -12,6 +12,8 @@ const contextDefaultValues: ContextType = {
     backgroundImageUrl: "",
     primaryColor: "",
     secondaryColor: "",
+    hoverColor: "",
+    ringColor: "",
   },
   setUserPreferences: () => {},
 };
@@ -29,10 +31,9 @@ export const UserPreferencesProvider: FC<Props> = ({ children }) => {
     useState<IDesignPreferences>(contextDefaultValues.designPreferences);
 
   const setUserPreferences = (pref: IDesignPreferences) => {
-    console.log("SETTING USER PREF", pref)
     setDesignPreferences(pref);
   };
-  
+
   return (
     <UserPreferencesContext.Provider
       value={{

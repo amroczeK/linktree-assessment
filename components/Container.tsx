@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Container: FC<Props> = ({ children, backgroundColor }) => {
-  return <div className={`relative container p-6 max-w-md w-full h-full bg-${backgroundColor}`}>
+  return <div className={`relative container p-6 max-w-md w-full h-full ${backgroundColor}`}>
     {children}
   </div>;
 };

@@ -32,7 +32,7 @@ const Home: NextPage<Props> = ({ users }) => {
             width={300}
             alt="linktree-logo"
           />
-          {/* <ul className="flex flex-col w-60 gap-4">
+          <ul className="flex flex-col w-60 gap-4">
             {users?.map((user: IUser) => (
               <li key={user.id}>
                 <Button
@@ -44,7 +44,7 @@ const Home: NextPage<Props> = ({ users }) => {
                 </Button>
               </li>
             ))}
-          </ul> */}
+          </ul>
         </div>
       </Container>
     </div>

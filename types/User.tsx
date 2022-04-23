@@ -44,6 +44,8 @@ export interface IDesignPreferences {
     backgroundImageUrl: string;
     primaryColor: string;
     secondaryColor: string;
+    hoverColor: string;
+    ringColor: string;
 }
 
 export interface IUser {
