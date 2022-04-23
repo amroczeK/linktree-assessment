@@ -1,5 +1,4 @@
 import { FC } from "react";
-import Image from "next/image";
 import AppleMusic from "@public/assets/icons/apple-music.svg";
 import Arrow from "@public/assets/icons/arrow.svg";
 import BandCamp from "@public/assets/icons/bandcamp.svg";

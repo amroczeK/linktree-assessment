@@ -28,11 +28,7 @@ const ShowsLink: FC<Props> = ({ shows, children }) => {
   );
 
   return (
-    <div
-      ref={wrapperRef}
-      id={`shows-link`}
-      className="flex flex-col"
-    >
+    <div ref={wrapperRef} id={`shows-link`} className="flex flex-col">
       <Button onClick={onClickShowsHandler}>{children}</Button>
       <ul
         className={`p-2.5 mt-2 w-full max-h-96 overflow-y-scroll ${
@@ -42,6 +38,11 @@ const ShowsLink: FC<Props> = ({ shows, children }) => {
         {shows.map((e: IShowDetails) => (
           <ShowDetails key={e.location} show={e} />
         ))}
+        <NextLink href="https://www.songkick.com/" target="_blank">
+          <div className="flex w-full justify-center items-center pt-4 pb-2.5">
+            <SvgIcon name="bysongkickwordmark" />
+          </div>
+        </NextLink>
       </ul>
     </div>
   );
