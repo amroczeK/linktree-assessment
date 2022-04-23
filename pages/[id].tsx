@@ -3,16 +3,17 @@ import { IUser, ISocialLink, IMusic } from "../types/User";
 import Head from "next/head";
 import Image from "next/image";
 import Container from "@components/Container";
-import React from "react";
+import React, { useEffect } from "react";
 import Avatar from "@components/Avatar";
 import SocialLink from "@components/ExternalLink";
 import MusicLink from "@components/MusicLink";
+import Footer from "@components/Footer";
 
 interface Props {
   user: IUser;
 }
 
-const UserLinks: NextPage<Props> = ({ user }) => {
+const UserLinks: NextPage<Props> = ({ user }: Props) => {
   const { backgroundColor, backgroundImageUrl, primaryColor, secondaryColor } =
     user.designPreferences;
 
@@ -23,9 +24,7 @@ const UserLinks: NextPage<Props> = ({ user }) => {
         <meta name="description" content="Linktree assessment project" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container
-        backgroundColor={backgroundColor}
-      >
+      <Container backgroundColor={backgroundColor}>
         <Avatar>
           <Image
             className="rounded-full"
@@ -48,14 +47,7 @@ const UserLinks: NextPage<Props> = ({ user }) => {
             </li>
           )}
         </ul>
-        <div className="absolute inset-x-0 bottom-0 flex justify-center items-center">
-          <Image
-            src="/assets/logo.svg"
-            height={64}
-            width="100%"
-            alt="linktree-logo"
-          />
-        </div>
+        <Footer />
       </Container>
     </div>
   );
@@ -74,7 +66,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         designPreferences: {
           backgroundColor: "gray-50",
           backgroundImageUrl: "/assets/backgrounds/background1.jpg",
-          primaryColor: "green-500",
+          primaryColor: "green-200",
           secondaryColor: "gray-500",
         },
         links: {

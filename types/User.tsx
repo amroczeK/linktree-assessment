@@ -52,3 +52,7 @@ export interface IUser {
   designPreferences: IDesignPreferences;
   links: ILinks;
 }
+
+export interface IUsers extends Array<IUser> {
+  [index: number]: IUser;
+}
