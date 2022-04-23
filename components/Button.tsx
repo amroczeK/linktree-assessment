@@ -14,9 +14,9 @@ const Button: FC<Props> = ({ children, onClick }) => {
 
   let styles = {
     backgroundColor:
-      primaryColor === "" ? "bg-green-500" : `${primaryColor}`,
-    ringColor: ringColor === "" ? "ring-green-500" : ringColor,
-    hoverColor: hoverColor === "" ? "hover:bg-green-300" : hoverColor,
+      primaryColor === "" ? "bg-blue-400" : `${primaryColor}`,
+    ringColor: ringColor === "" ? "ring-blue-400" : ringColor,
+    hoverColor: hoverColor === "" ? "hover:bg-blue-300" : hoverColor,
   };
 
   return (

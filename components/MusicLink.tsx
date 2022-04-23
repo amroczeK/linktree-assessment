@@ -30,10 +30,14 @@ const MusicLink: FC<Props> = ({ music, children }) => {
   );
 
   return (
-    <div ref={wrapperRef} id="music-link" className="flex flex-col">
+    <div
+      ref={wrapperRef}
+      id={`music-link`}
+      className="flex flex-col"
+    >
       <Button onClick={onClickMusicHandler}>{children}</Button>
       <ul
-        className={`p-2.5 mt-2 w-full ${
+        className={`mt-2 w-full max-h-96 overflow-y-scroll ${
           isMusicOpen ? "flex flex-col divide-y divide-gray-300" : "hidden"
         } bg-gray-200 rounded-xl `}
       >
@@ -65,7 +69,7 @@ const SongDetails = ({
     className={`flex 
       ${
         expandPlayer ? `flex-col` : `justify-center items-center space-x-1.5`
-      } cursor-pointer w-full`}
+      } cursor-pointer w-full hover:bg-gray-300 p-2.5 rounded-lg`}
     onClick={onClick}
   >
     <h2>{songName}</h2>
@@ -88,11 +92,8 @@ const MusicPlayer = ({
   setCurrentSong: (e: string) => void;
   expandPlayer: boolean;
 }) => {
-  //const [expandPlayer, setExplandPlayer] = useState<boolean>(false);
-
   const onClickSong = () => {
     setCurrentSong(song.songName);
-    //setExplandPlayer(!expandPlayer);
   };
 
   const onClickPlay = () => {
@@ -143,7 +144,7 @@ const MusicPlayer = ({
               <PlatformLink
                 linkDetails={e}
                 isButton={false}
-                styles="flex items-center justify-between py-2"
+                styles="flex items-center justify-between p-2.5 hover:bg-gray-300 rounded-lg"
               >
                 <SvgIcon styles="-rotate-90" name="arrow" />
               </PlatformLink>

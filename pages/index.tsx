@@ -60,9 +60,6 @@ export const getStaticProps: GetStaticProps = async () => {
       {
         id: "adrianm",
       },
-      {
-        id: "beachgirl",
-      },
     ],
   };
 

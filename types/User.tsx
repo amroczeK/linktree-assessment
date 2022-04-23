@@ -28,9 +28,12 @@ export interface IMusic extends Array<ISong> {
 }
 
 export interface IShowDetails {
+  showName: string;
+  artistName?: string;
   date: Date;
   location: string;
   ticketsAvailable: boolean;
+  url: string;
 }
 
 export interface IShows extends Array<IShowDetails>{

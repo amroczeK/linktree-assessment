@@ -1,22 +1,22 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { IUser, ISocialLink, IMusic, ISong } from "../types/User";
+import { IUser, ISocialLink } from "../types/User";
 import Head from "next/head";
 import Image from "next/image";
 import Container from "@components/Container";
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import Avatar from "@components/Avatar";
 import SocialLink from "@components/ExternalLink";
 import MusicLink from "@components/MusicLink";
 import Footer from "@components/Footer";
 import { useUserPerferences } from "../contexts/UserPreferenceContext";
+import ShowsLink from "@components/ShowsLink";
 
 interface Props {
   user: IUser;
 }
 
 const UserLinks: NextPage<Props> = ({ user }: Props) => {
-  const { backgroundColor, backgroundImageUrl, primaryColor, secondaryColor } =
-    user.designPreferences;
+  const { backgroundColor } = user.designPreferences;
 
   const { setUserPreferences } = useUserPerferences();
 
@@ -50,6 +50,7 @@ const UserLinks: NextPage<Props> = ({ user }: Props) => {
             </li>
           ))}
           <MusicLink music={user.links.music}>Music</MusicLink>
+          <ShowsLink shows={user.links.shows}>Shows</ShowsLink>
         </ul>
         <Footer />
       </Container>
@@ -154,7 +155,31 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
               ],
             },
           ],
-          shows: [{ date: "", location: "", ticketsAvailable: true }],
+          shows: [
+            {
+              showName: "Ghost Care",
+              artistName: "",
+              date: "2022/04/23",
+              location: "Prince Of Wales Hotel, Bunbury, WA, Australia",
+              ticketsAvailable: true,
+              url: "https://www.songkick.com/concerts/40300239-ghost-care-at-prince-of-wales-hotel",
+            },
+            {
+              showName: "Brian Cadd",
+              artistName: "Russell Morris",
+              date: "2022/04/24",
+              location: "Ravenswood Hotel, Ravenswood, WA, Australia",
+              ticketsAvailable: false,
+              url: "https://www.songkick.com/concerts/39944448-brian-cadd-at-ravenswood-hotel",
+            },
+            {
+              showName: "The Southern River Band",
+              date: "2022/04/30",
+              location: "The River, Margaret River, WA, Australia",
+              ticketsAvailable: true,
+              url: "https://www.songkick.com/concerts/40334571-southern-river-band-at-river",
+            },
+          ],
         },
       },
     ],

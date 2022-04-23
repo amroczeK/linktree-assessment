@@ -25,18 +25,22 @@ const ExternalLink: FC<Props> = ({
     <NextLink href={url} target="_blank">
       {isButton ? (
         <Button>
-          <SvgIcon name={name?.replace(/\s/g, "").toLocaleLowerCase()}>
-            {name}
-          </SvgIcon>
+          {name && (
+            <SvgIcon name={name?.replace(/\s/g, "").toLocaleLowerCase()}>
+              {name}
+            </SvgIcon>
+          )}
         </Button>
       ) : (
         <div className={styles}>
-          <SvgIcon
-            styles="mr-2"
-            name={name?.replace(/\s/g, "").toLocaleLowerCase()}
-          >
-            {name}
-          </SvgIcon>
+          {name && (
+            <SvgIcon
+              styles="mr-2"
+              name={name?.replace(/\s/g, "").toLocaleLowerCase()}
+            >
+              {name}
+            </SvgIcon>
+          )}
           {children}
         </div>
       )}
