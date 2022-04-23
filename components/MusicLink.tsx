@@ -111,6 +111,7 @@ const MusicPlayer = ({
               height={72}
               width={72}
               alt={songName}
+              priority
             />
             <div className="flex justify-center items-center gap-2.5">
               <SvgIcon

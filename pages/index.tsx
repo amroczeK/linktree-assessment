@@ -31,6 +31,7 @@ const Home: NextPage<Props> = ({ users }) => {
             height={"100%"}
             width={300}
             alt="linktree-logo"
+            priority
           />
           <ul className="flex flex-col w-60 gap-4">
             {users?.map((user: IUser) => (

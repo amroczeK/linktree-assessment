@@ -39,6 +39,7 @@ const UserLinks: NextPage<Props> = ({ user }: Props) => {
             alt="Picture of the author"
             width={64}
             height={64}
+            priority
           ></Image>
           <h1 className="text-lg tracking-widest font-semibold">{`@${user.id}`}</h1>
         </Avatar>

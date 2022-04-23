@@ -11,6 +11,7 @@ const Footer: FC = () => {
           height={64}
           width="100%"
           alt="linktree-logo"
+          priority
         />
       </NextLink>
     </div>
