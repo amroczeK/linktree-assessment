@@ -1,4 +1,5 @@
-import { FC, MouseEvent } from "react";
+import { useUserPerferences } from "contexts/UserPreferenceContext";
+import { FC, MouseEvent, useContext } from "react";
 
 interface Props {
   children?: React.ReactNode;
@@ -6,10 +7,14 @@ interface Props {
 }
 
 const Button: FC<Props> = ({ children, onClick }) => {
+  const { designPreferences } = useUserPerferences();
+
+  const { primaryColor } = designPreferences;
+
   return (
     <button
       onClick={onClick}
-      className={`flex flex-col items-center justify-center w-full py-2.5 bg-green-500 rounded-xl hover:bg-green-500/75 focus:ring-2 focus:ring-offset-2 ring-green-500 shadow-md`}
+      className={`flex flex-col items-center justify-center w-full py-2.5 bg-${primaryColor} rounded-xl hover:bg-${primaryColor}/75 focus:ring-2 focus:ring-offset-2 ring-${primaryColor} shadow-md`}
     >
       {children}
     </button>

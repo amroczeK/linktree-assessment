@@ -3,11 +3,12 @@ import { IUser, ISocialLink, IMusic } from "../types/User";
 import Head from "next/head";
 import Image from "next/image";
 import Container from "@components/Container";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import Avatar from "@components/Avatar";
 import SocialLink from "@components/ExternalLink";
 import MusicLink from "@components/MusicLink";
 import Footer from "@components/Footer";
+import { useUserPerferences } from "../contexts/UserPreferenceContext";
 
 interface Props {
   user: IUser;
@@ -16,6 +17,13 @@ interface Props {
 const UserLinks: NextPage<Props> = ({ user }: Props) => {
   const { backgroundColor, backgroundImageUrl, primaryColor, secondaryColor } =
     user.designPreferences;
+
+  const { setUserPreferences } = useUserPerferences();
+
+  useEffect(() => {
+    console.log("calling user preferences")
+    setUserPreferences(user.designPreferences);
+  }, [user, setUserPreferences]);
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">
@@ -66,7 +74,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         designPreferences: {
           backgroundColor: "gray-50",
           backgroundImageUrl: "/assets/backgrounds/background1.jpg",
-          primaryColor: "green-200",
+          primaryColor: "green-500",
           secondaryColor: "gray-500",
         },
         links: {
