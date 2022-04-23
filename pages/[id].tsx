@@ -73,10 +73,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         designPreferences: {
           backgroundColor: "bg-gray-50",
           backgroundImageUrl: "/assets/backgrounds/background1.jpg",
-          primaryColor: "green-500",
+          primaryColor: "bg-blue-500",
           secondaryColor: "gray-300",
           hoverColor: "hover:bg-green-300",
-          ringColor: "ring-green-500",
+          ringColor: "ring-green-400",
         },
         links: {
           socials: [

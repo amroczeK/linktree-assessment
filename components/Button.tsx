@@ -14,7 +14,7 @@ const Button: FC<Props> = ({ children, onClick }) => {
 
   let styles = {
     backgroundColor:
-      primaryColor === "" ? "bg-green-500" : `bg-${primaryColor}`,
+      primaryColor === "" ? "bg-green-500" : `${primaryColor}`,
     ringColor: ringColor === "" ? "ring-green-500" : ringColor,
     hoverColor: hoverColor === "" ? "hover:bg-green-300" : hoverColor,
   };
@@ -22,7 +22,7 @@ const Button: FC<Props> = ({ children, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className={`flex flex-col items-center justify-center w-full py-2.5 rounded-xl shadow-md focus:ring-2 ho focus:ring-offset-2 ${styles.ringColor} ${styles.backgroundColor} ${styles.hoverColor}`}
+      className={`flex flex-col items-center justify-center w-full py-2.5 rounded-xl shadow-md focus:ring-2 focus:ring-offset-2 ${styles.ringColor} ${styles.backgroundColor} ${styles.hoverColor}`}
     >
       {children}
     </button>
