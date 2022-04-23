@@ -16,11 +16,15 @@ export interface IPlatforms extends Array<IPlatformDetails>{
     [index: number]: IPlatformDetails;
 }
 
-export interface IMusic {
+export interface ISong {
   songName: string;
   artistName: string;
   thumbnail: string;
   platforms: IPlatforms;
+}
+
+export interface IMusic extends Array<ISong> {
+  [index: number]: ISong;
 }
 
 export interface IShowDetails {

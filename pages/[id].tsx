@@ -1,5 +1,5 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { IUser, ISocialLink, IMusic } from "../types/User";
+import { IUser, ISocialLink, IMusic, ISong } from "../types/User";
 import Head from "next/head";
 import Image from "next/image";
 import Container from "@components/Container";
@@ -48,11 +48,7 @@ const UserLinks: NextPage<Props> = ({ user }: Props) => {
               <SocialLink linkDetails={e} />
             </li>
           ))}
-          {user.links.music.songName && (
-            <li>
-              <MusicLink musicDetails={user.links.music}>Music</MusicLink>
-            </li>
-          )}
+          <MusicLink music={user.links.music}>Music</MusicLink>
         </ul>
         <Footer />
       </Container>
@@ -73,7 +69,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         designPreferences: {
           backgroundColor: "bg-gray-50",
           backgroundImageUrl: "/assets/backgrounds/background1.jpg",
-          primaryColor: "bg-blue-500",
+          primaryColor: "bg-green-500",
           secondaryColor: "gray-300",
           hoverColor: "hover:bg-green-300",
           ringColor: "ring-green-400",
@@ -93,38 +89,70 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
               url: "https://amroczek.dev/",
             },
           ],
-          music: {
-            songName: "Sunset Lover",
-            artistName: "Petit Biscuit",
-            thumbnail: "/assets/music/sunset-lover-thumbnail.jpg",
-            platforms: [
-              {
-                name: "Spotify",
-                url: "https://open.spotify.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
-              },
-              {
-                name: "Apple Music",
-                url: "https://apple.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
-              },
-              {
-                name: "Youtube Music",
-                url: "https://youtube.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
-              },
-              {
-                name: "Deezer",
-                url: "https://deezer.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
-              },
-              {
-                name: "Tidal",
-                url: "https:/tidal.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
-              },
-              {
-                name: "Bandcamp",
-                url: "https:/bandcamp.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
-              },
-            ],
-          },
-
+          music: [
+            {
+              songName: "Lost In Japan",
+              artistName: "Shawn Mendes, Zedd",
+              thumbnail: "/assets/music/lost-in-japan-thumbnail.jpeg",
+              platforms: [
+                {
+                  name: "Spotify",
+                  url: "https://open.spotify.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Apple Music",
+                  url: "https://apple.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Youtube Music",
+                  url: "https://youtube.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Deezer",
+                  url: "https://deezer.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Tidal",
+                  url: "https:/tidal.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Bandcamp",
+                  url: "https:/bandcamp.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+              ],
+            },
+            {
+              songName: "Sunset Lover",
+              artistName: "Petit Biscuit",
+              thumbnail: "/assets/music/sunset-lover-thumbnail.jpg",
+              platforms: [
+                {
+                  name: "Spotify",
+                  url: "https://open.spotify.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Apple Music",
+                  url: "https://apple.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Youtube Music",
+                  url: "https://youtube.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Deezer",
+                  url: "https://deezer.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Tidal",
+                  url: "https:/tidal.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Bandcamp",
+                  url: "https:/bandcamp.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+              ],
+            },
+          ],
           shows: [{ date: "", location: "", ticketsAvailable: true }],
         },
       },
