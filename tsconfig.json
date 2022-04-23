@@ -2,6 +2,17 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@libs/*": ["libs/*"],
+      "@models/*": ["models/*"],
+      "@middlewares/*": ["middlewares/*"],
+      "@styles/*": ["styles/*"],
+      "@types/*": ["types/*"],
+      "@public/*": ["public/*"],
+      "@hooks/*": ["hooks/*"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -15,6 +26,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types/Icons.js", "hooks/ClickOutsideComponent.js"],
   "exclude": ["node_modules"]
 }
