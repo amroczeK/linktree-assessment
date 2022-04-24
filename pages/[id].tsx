@@ -2,14 +2,14 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { IUser, ISocialLink } from "../types/User";
 import Head from "next/head";
 import Image from "next/image";
-import Container from "@components/Container";
+import Container from "@components/Layout/Container";
 import React, { useEffect } from "react";
 import Avatar from "@components/Avatar";
-import SocialLink from "@components/ExternalLink";
-import MusicLink from "@components/MusicLink";
-import Footer from "@components/Footer";
+import SocialLink from "@components/Links/ExternalLink";
+import MusicLink from "@components/Music/MusicLink";
+import Footer from "@components/Layout/Footer";
 import { useUserPerferences } from "../contexts/UserPreferenceContext";
-import ShowsLink from "@components/ShowsLink";
+import ShowsLink from "@components/Shows/ShowsLink";
 
 interface Props {
   user: IUser;
@@ -25,7 +25,7 @@ const UserLinks: NextPage<Props> = ({ user }: Props) => {
   }, [user, setUserPreferences]);
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
+    <div className="w-full h-full flex items-center justify-center">
       <Head>
         <title>Linktree Assessment</title>
         <meta name="description" content="Linktree assessment project" />

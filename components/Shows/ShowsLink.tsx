@@ -1,9 +1,9 @@
 import React, { FC, useRef, useState } from "react";
 import Button from "@components/Button";
-import { IShowDetails, IShows } from "../types/User";
-import SvgIcon from "./SvgIcon";
+import { IShowDetails, IShows } from "../../types/User";
+import SvgIcon from "../SvgIcon";
 import { useClickOutsideComponent } from "@hooks/ClickOutsideComponent";
-import NextLink from "./NextLink";
+import NextLink from "../Links/NextLink";
 import { format } from "date-fns";
 
 interface Props {

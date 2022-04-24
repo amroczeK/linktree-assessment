@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import MusicLink from "@components/MusicLink";
+import MusicLink from "@components/Music/MusicLink";
 import { mockedUsers } from "@mocks/mocks";
 
 describe("Music Link Component", () => {

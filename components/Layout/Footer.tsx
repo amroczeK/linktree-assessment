@@ -1,10 +1,10 @@
 import React, { FC } from "react";
-import NextLink from "./NextLink";
+import NextLink from "../Links/NextLink";
 import Image from "next/image";
 
 const Footer: FC = () => {
   return (
-    <div className="absolute inset-x-0 bottom-0 flex justify-center items-center w-full bg-gray-50">
+    <div className="flex justify-center items-center w-full mt-10">
       <NextLink href="/">
         <Image
           src="/assets/logo.svg"
