@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import Button from "@components/Button";
-import { IPlatformDetails, ISocialLink } from "../types/User";
+import { IPlatformDetails, ISocialLink } from "../../types/User";
 import NextLink from "./NextLink";
-import SvgIcon from "./SvgIcon";
+import SvgIcon from "../SvgIcon";
 
 interface Props {
   linkDetails: ISocialLink | IPlatformDetails;

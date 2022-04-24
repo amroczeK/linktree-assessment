@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
 import Image from "next/image";
 import Head from "next/head";
-import Container from "@components/Container";
+import Container from "@components/Layout/Container";
 import Button from "@components/Button";
 import { useRouter } from "next/router";
 import { IUsers, IUser } from "../types/User";
