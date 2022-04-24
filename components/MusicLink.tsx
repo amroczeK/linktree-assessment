@@ -31,12 +31,16 @@ const MusicLink: FC<Props> = ({ music, children }) => {
 
   return (
     <div
+      data-testid={`music-link`}
       ref={wrapperRef}
       id={`music-link`}
       className="flex flex-col"
     >
-      <Button onClick={onClickMusicHandler}>{children}</Button>
+      <Button data-testid={`music-link-button`} onClick={onClickMusicHandler}>
+        {children}
+      </Button>
       <ul
+        data-testid={isMusicOpen ? "song-dropdown-active" : "song-dropdown-inactive"}
         className={`mt-2 w-full max-h-96 overflow-y-scroll ${
           isMusicOpen ? "flex flex-col divide-y divide-gray-300" : "hidden"
         } bg-gray-200 rounded-xl `}
@@ -66,6 +70,7 @@ const SongDetails = ({
   onClick?: () => void;
 }) => (
   <div
+    data-testid={`song-details-${songName}`}
     className={`flex 
       ${
         expandPlayer ? `flex-col` : `justify-center items-center space-x-1.5`
@@ -102,7 +107,11 @@ const MusicPlayer = ({
 
   const { songName, thumbnail, artistName, platforms } = song;
   return (
-    <li key={songName} className="flex flex-col p-2.5 gap-4 w-full">
+    <li
+      data-testid={`song-link-${songName}`}
+      key={songName}
+      className="flex flex-col p-2.5 gap-4 w-full"
+    >
       <div className="flex items-center gap-4">
         {expandPlayer ? (
           <>
