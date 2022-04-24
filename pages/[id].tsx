@@ -52,6 +52,9 @@ const UserLinks: NextPage<Props> = ({ user }: Props) => {
           <MusicLink music={user.links.music}>Music</MusicLink>
           <ShowsLink shows={user.links.shows}>Shows</ShowsLink>
         </ul>
+        {/**
+         * @TODO - Resolve footer clipping issue due to content overflow. Need to change container height from screen to full e.g. 100% on overflow.
+         */}
         <Footer />
       </Container>
     </div>
