@@ -185,6 +185,73 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           ],
         },
       },
+      {
+        id: "beachgirl",
+        avatar: "/assets/profile-picture.png",
+        designPreferences: {
+          backgroundColor: "bg-gray-50",
+          backgroundImageUrl: "/assets/backgrounds/background1.jpg",
+          primaryColor: "bg-orange-400",
+          secondaryColor: "gray-300",
+          hoverColor: "hover:bg-orange-300",
+          ringColor: "ring-orange-400",
+        },
+        links: {
+          socials: [
+            {
+              name: "Twitter",
+              url: "https://twitter.com/elonmusk",
+            },
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/elonmusk",
+            },
+          ],
+          music: [
+            {
+              songName: "Sunset Lover",
+              artistName: "Petit Biscuit",
+              thumbnail: "/assets/music/sunset-lover-thumbnail.jpg",
+              platforms: [
+                {
+                  name: "Spotify",
+                  url: "https://open.spotify.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Apple Music",
+                  url: "https://apple.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Youtube Music",
+                  url: "https://youtube.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Deezer",
+                  url: "https://deezer.music.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Tidal",
+                  url: "https:/tidal.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+                {
+                  name: "Bandcamp",
+                  url: "https:/bandcamp.com/track/3WRQUvzRvBDr4AxMWhXc5E?si=ebc7378d59854b66",
+                },
+              ],
+            },
+          ],
+          shows: [
+            {
+              showName: "Ghost Care",
+              artistName: "",
+              date: "2022/04/23",
+              location: "Prince Of Wales Hotel, Bunbury, WA, Australia",
+              ticketsAvailable: true,
+              url: "https://www.songkick.com/concerts/40300239-ghost-care-at-prince-of-wales-hotel",
+            },
+          ],
+        },
+      },
     ],
   };
 
