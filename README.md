@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project for the Linktree interview assessment. Project is deployed to Vercel and assessible: [link to website](https://linktree-assessment.vercel.app/).
 
-The application was developed using the NextJs framework (which utilizing the React library). The users page is dynamically generated using getStaticPaths and getStaticProps and the user data/design preferences.
+The application was developed using the NextJs framework (which utilizing the React library), utilizing server side rendering. The users page is dynamically generated using getStaticPaths and getStaticProps and the user data/design preferences.
 
 Given more time I would have used getStaticPaths and getStaticProps to fetch data from a database like MongoDB where the users data would be stored. Instead the user data is contained within getStaticProps acting as an in-memory database.
 
