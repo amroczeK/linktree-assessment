@@ -32,7 +32,7 @@ const UserLinks: NextPage<Props> = ({ user }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container backgroundColor={backgroundColor}>
-        <Avatar>
+        <Avatar data-testid={`avatar-${user.id}`}>
           <Image
             className="rounded-full"
             src={user.avatar}

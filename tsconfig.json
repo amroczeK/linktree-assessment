@@ -5,13 +5,15 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
       "@libs/*": ["libs/*"],
       "@models/*": ["models/*"],
       "@middlewares/*": ["middlewares/*"],
       "@styles/*": ["styles/*"],
       "@types/*": ["types/*"],
       "@public/*": ["public/*"],
-      "@hooks/*": ["hooks/*"]
+      "@hooks/*": ["hooks/*"],
+      "@mocks/*": ["__mocks__/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
@@ -27,5 +29,5 @@
     "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types/Icons.js", "hooks/ClickOutsideComponent.js"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }

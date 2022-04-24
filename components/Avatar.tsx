@@ -4,9 +4,12 @@ interface Props {
   children?: React.ReactNode;
 }
 
-const Avatar: FC<Props> = ({ children }) => {
+const Avatar: FC<Props> = ({ children, ...props }) => {
   return (
-    <div className="flex flex-col items-center mb-6 gap-2 justify-center w-full max-h-28">
+    <div
+      {...props}
+      className="flex flex-col items-center mb-6 gap-2 justify-center w-full max-h-28"
+    >
       {children}
     </div>
   );

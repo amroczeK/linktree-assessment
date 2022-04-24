@@ -27,6 +27,7 @@ const Home: NextPage<Props> = ({ users }) => {
       <Container>
         <div className="flex flex-col justify-center items-center w-full h-full gap-4">
           <Image
+            data-testid="linktree-logo"
             src="/assets/logo.svg"
             height={"100%"}
             width={300}
@@ -35,7 +36,7 @@ const Home: NextPage<Props> = ({ users }) => {
           />
           <ul className="flex flex-col w-60 gap-4">
             {users?.map((user: IUser) => (
-              <li key={user.id}>
+              <li data-testid={`user-${user.id}`} key={user.id}>
                 <Button
                   onClick={() => {
                     onButtonClick(user.id);
