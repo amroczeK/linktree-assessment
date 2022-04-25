@@ -37,23 +37,24 @@ const MusicLink: FC<Props> = ({ music, children }) => {
       <Button data-testid={`music-link-button`} onClick={onClickMusicHandler}>
         {children}
       </Button>
-      <ul
-        data-testid={
-          isMusicOpen ? "song-dropdown-active" : "song-dropdown-inactive"
-        }
-        className={`mt-2 w-full max-h-96 overflow-y-scroll ${
-          isMusicOpen ? "flex flex-col divide-y divide-gray-300" : "hidden"
-        } bg-gray-200 rounded-xl `}
-      >
-        {music.map((e: ISong) => (
-          <MusicPlayer
-            key={e.songName}
-            song={e}
-            expandPlayer={currentSong === e.songName}
-            setCurrentSong={setCurrentSong}
-          />
-        ))}
-      </ul>
+      <div className="dropdown-container">
+        <ul
+          data-testid={
+            isMusicOpen ? "song-dropdown-active" : "song-dropdown-inactive"
+          }
+          className={` 
+            ${isMusicOpen ? "dropdown-ul-active" : "dropdown-ul-inactive"}`}
+        >
+          {music.map((e: ISong) => (
+            <MusicPlayer
+              key={e.songName}
+              song={e}
+              expandPlayer={currentSong === e.songName}
+              setCurrentSong={setCurrentSong}
+            />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
