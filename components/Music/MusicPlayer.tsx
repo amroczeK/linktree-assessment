@@ -26,7 +26,7 @@ export const MusicPlayer = ({
     <li
       data-testid={`song-link-${songName}`}
       key={songName}
-      className="flex flex-col p-2.5 gap-4 w-full"
+      className="dropdown-li"
     >
       <div className="flex items-center gap-4">
         {expandPlayer ? (

@@ -7,3 +7,19 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.dropdown-container {
+  @apply mt-2 w-full h-full bg-gray-200 rounded-xl overflow-hidden;
+}
+
+.dropdown-ul-active {
+  @apply flex flex-col divide-y divide-gray-300 overflow-y-auto max-h-96;
+}
+
+.dropdown-ul-inactive {
+  @apply hidden;
+}
+
+.dropdown-li {
+  @apply flex flex-col gap-4 w-full p-2.5;
+}
