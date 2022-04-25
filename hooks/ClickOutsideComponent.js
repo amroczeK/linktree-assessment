@@ -1,5 +1,11 @@
 import { useEffect } from "react";
 
+/**
+ * @TODO
+ * Fix Shows dropdown not opening when Music dropdown open and you click outside of music dropdown container/reference
+ * onto the Shows link button to open shows dropdown. 
+ * NOTE: Works in reverse, e.g. Shows dropdown open and you click on Music button.
+ */
 export function useClickOutsideComponent(
   ref,
   id,
