@@ -15,6 +15,9 @@ export function useClickOutsideComponent(
         !event.target.parentElement.classList.contains(id) &&
         !event.target.classList.contains(id)
       ) {
+        console.log(ref.current);
+        console.log(event.target.parentElement);
+        console.log(event.target.classList)
         onClickHandler();
       }
     }

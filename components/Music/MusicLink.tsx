@@ -28,7 +28,7 @@ const MusicLink: FC<Props> = ({ music, children }) => {
   );
 
   return (
-    <div
+    <li
       data-testid={`music-link`}
       ref={wrapperRef}
       id={`music-link`}
@@ -37,7 +37,7 @@ const MusicLink: FC<Props> = ({ music, children }) => {
       <Button data-testid={`music-link-button`} onClick={onClickMusicHandler}>
         {children}
       </Button>
-      <div className="dropdown-container">
+      <div className={`dropdown-container ${!isMusicOpen ? "hidden" : "block"}`}>
         <ul
           data-testid={
             isMusicOpen ? "song-dropdown-active" : "song-dropdown-inactive"
@@ -55,7 +55,7 @@ const MusicLink: FC<Props> = ({ music, children }) => {
           ))}
         </ul>
       </div>
-    </div>
+    </li>
   );
 };
 
