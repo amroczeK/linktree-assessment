@@ -43,7 +43,7 @@ const UserLinks: NextPage<Props> = ({ user }: Props) => {
           ></Image>
           <h1 className="text-lg tracking-widest font-semibold">{`@${user.id}`}</h1>
         </Avatar>
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col gap-4 grow">
           {user.links.socials.map((e: ISocialLink) => (
             <li key={e.name}>
               <SocialLink linkDetails={e} />
@@ -52,9 +52,6 @@ const UserLinks: NextPage<Props> = ({ user }: Props) => {
           <MusicLink music={user.links.music}>Music</MusicLink>
           <ShowsLink shows={user.links.shows}>Shows</ShowsLink>
         </ul>
-        {/**
-         * @TODO - Resolve footer clipping issue due to content overflow. Need to change container height from screen to full e.g. 100% on overflow.
-         */}
         <Footer />
       </Container>
     </div>
